@@ -1,0 +1,103 @@
+.rinpoche {
+  background: var(--cream);
+  color: var(--ink);
+  padding-block: clamp(48px, 9vh, 120px);
+}
+
+.rinpoche__bg {
+  height: 120%;
+  top: -10%;
+  object-position: center 30%;
+  will-change: transform;
+}
+
+/* Cream wash so the copy stays readable over the ridge photo. */
+.rinpoche__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(237, 228, 211, 0.1) 0%,
+    rgba(237, 228, 211, 0.86) 38%,
+    var(--cream) 62%
+  );
+}
+
+.rinpoche__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+}
+
+.rinpoche__portrait {
+  margin: 0;
+  will-change: transform;
+}
+
+.rinpoche__portrait img {
+  width: 100%;
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.35));
+}
+
+.rinpoche__copy {
+  display: grid;
+  gap: clamp(16px, 2.5vh, 28px);
+  max-width: 52ch;
+}
+
+.rinpoche__title {
+  font-size: var(--fs-h2);
+  color: var(--orange-deep);
+  max-width: 14ch;
+}
+
+.rinpoche__snaps {
+  list-style: none;
+  margin: clamp(8px, 2vh, 24px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, 1.6vw, 22px);
+}
+
+/* Stamp-bordered polaroid, as in the mockup. */
+.stamp {
+  position: relative;
+  padding: 7px;
+  background: var(--cream-soft);
+  border: 2px solid var(--orange-deep);
+  box-shadow: 6px 6px 0 #7f9b6a;
+  rotate: var(--tilt, 0deg);
+  transition:
+    rotate 0.4s var(--ease),
+    translate 0.4s var(--ease);
+}
+
+.stamp:hover {
+  rotate: 0deg;
+  translate: 0 -6px;
+}
+
+.stamp img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .rinpoche__inner {
+    grid-template-columns: 1fr;
+  }
+  .rinpoche__portrait {
+    max-width: 68%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp:hover {
+    rotate: var(--tilt, 0deg);
+    translate: 0;
+  }
+}

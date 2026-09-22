@@ -1,0 +1,66 @@
+:root {
+  --orange: #e0592b;
+  --orange-deep: #c1462a;
+  --cream: #ede4d3;
+  --cream-soft: #f3ece0;
+  --ink: #2e3330;
+  --ink-soft: #3a403c;
+  --sand: #d9c9ae;
+  --white: #fff;
+
+  --font-display: "Bebas Neue", "Anton", Impact, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --page: 1440px;
+  --gutter: clamp(20px, 5vw, 96px);
+
+  --fs-hero: clamp(2.75rem, 7.5vw, 6.5rem);
+  --fs-h2: clamp(2rem, 4.5vw, 4rem);
+  --fs-h3: clamp(1.5rem, 2.6vw, 2.5rem);
+  --fs-lead: clamp(1.05rem, 1.8vw, 1.75rem);
+  --fs-body: clamp(0.95rem, 1.15vw, 1.125rem);
+  --fs-small: clamp(0.8rem, 1vw, 0.95rem);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.02;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+}
+button {
+  font: inherit;
+}

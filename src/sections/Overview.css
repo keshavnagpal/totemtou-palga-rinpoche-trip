@@ -1,0 +1,64 @@
+.overview {
+  background: var(--orange);
+  color: var(--cream-soft);
+  display: flex;
+  flex-direction: column;
+}
+
+.overview__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vh, 44px);
+}
+
+.overview__topbar {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: clamp(24px, 6vh, 72px);
+}
+
+.overview__title {
+  font-size: var(--fs-hero);
+  color: var(--white);
+  display: grid;
+  max-width: 14ch;
+}
+
+.overview__body {
+  max-width: 46ch;
+  font-size: var(--fs-body);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.overview__lead {
+  font-family: var(--font-display);
+  font-size: var(--fs-lead);
+  line-height: 1.25;
+  max-width: 24ch;
+  color: var(--white);
+}
+
+/* Foreground ridge rising from the bottom of the frame. */
+.overview__range {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  width: 100%;
+  will-change: transform;
+}
+
+.overview__range img {
+  width: 100%;
+  height: clamp(240px, 46vh, 520px);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+@media (max-width: 900px) {
+  .overview__title {
+    max-width: none;
+  }
+  .overview__range img {
+    height: 42vh;
+  }
+}
